@@ -1,7 +1,7 @@
 # Image-Qiniu
 
 ## Introduction
-This Doc teaches you how to quickly build a Qiniu Private Cloud Storage Cluster
+This Doc teaches you how to quickly build a Kodo Enterprise  Storage Cluster
 ## Dependencies
 * VBox 5.2.24
 * Vagrant 2.2.3
