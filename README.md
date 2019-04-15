@@ -1,10 +1,11 @@
 # Image-Qiniu
 
 ## Introduction
-This Doc teaches you how to quickly build a Kodo Enterprise  Storage Cluster
+This Doc teaches you how to quickly build Kodo Enterprise Storage Cluster
 ## Dependencies
 * VBox 5.2.24
 * Vagrant 2.2.3
+## 推荐配置 
 
 ## Quick Start
 Step 1. Install [Vbox](https://www.virtualbox.org) and [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
@@ -40,5 +41,5 @@ Step 7. How to login image
 vagrant ssh node1/or/node2/or/node3/or/node4
 ```
 
-# [Run In Docker](./docker/README.md)
+# [Run In Docker](docker/README.md)
 
