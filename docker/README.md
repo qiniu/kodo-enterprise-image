@@ -1,5 +1,5 @@
 
-# Quickly Start Qiniu Private Cloud Storage Cluster  with docker
+# Quickly Start Kodo Enterprise Storage Cluster on docker
 ## Dependencies
 * docker 1.13
 * OS CentOS 7.5 or later
