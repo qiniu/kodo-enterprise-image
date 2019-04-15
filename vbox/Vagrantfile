@@ -1,0 +1,156 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+$s1 = <<-SCRIPT
+sudo rm -rf /etc/supervisor/conf.d/kodoredisexporter.conf
+sudo rm -rf /home/qboxserver/kodoredisexporter
+sudo supervisorctl update && sudo supervisorctl restart all
+sudo supervisorctl stop prometheus && sudo rm -rf /data/prometheus_data/*
+sudo supervisorctl start all
+SCRIPT
+$s2 = <<-SCRIPT
+sudo sed -i 's/server-z0-node1-10.0.0.101/server-z0-node2-10.0.0.102/g' /home/qboxserver/consul/consul_server.json
+sudo sed -i 's/"bind_addr": "10.0.0.101"/"bind_addr": "10.0.0.102"/g' /home/qboxserver/consul/consul_server.json
+sudo sed -i 's/10.0.0.101:9030/10.0.0.102:9030/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/pfdstg-node1/pfdstg-node2/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/10.0.0.101:9035/10.0.0.102:9035/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/"group_idx": 1/"group_idx": 2/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/10.0.0.101:6010/10.0.0.102:6010/g' /home/qboxserver/ptfdstg/_package/qboxptfdstg.conf
+sudo rm -rf /etc/supervisor/conf.d/prometheus.conf
+sudo rm -rf /etc/supervisor/conf.d/qboxlcc.conf
+sudo rm -rf /etc/supervisor/conf.d/mgoroll_2.conf
+sudo rm -rf /etc/supervisor/conf.d/monptfdstg.conf
+sudo rm -rf /etc/supervisor/conf.d/kodostg*.conf
+sudo rm -rf /etc/supervisor/conf.d/kodoexporter.conf
+sudo rm -rf /etc/supervisor/conf.d/monptfdtransfer.conf
+sudo supervisorctl update && sudo supervisorctl restart all
+SCRIPT
+
+$s3 = <<-SCRIPT
+sudo sed -i 's/server-z0-node1-10.0.0.101/server-z0-node3-10.0.0.103/g' /home/qboxserver/consul/consul_server.json
+sudo sed -i 's/"bind_addr": "10.0.0.101"/"bind_addr": "10.0.0.103"/g' /home/qboxserver/consul/consul_server.json
+sudo sed -i 's/10.0.0.101:9030/10.0.0.103:9030/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/pfdstg-node1/pfdstg-node3/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/10.0.0.101:9035/10.0.0.103:9035/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/"group_id": 2/"group_id": 1/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/10.0.0.101:6010/10.0.0.103:6010/g' /home/qboxserver/ptfdstg/_package/qboxptfdstg.conf
+sudo rm -rf /etc/supervisor/conf.d/prometheus.conf
+sudo rm -rf /etc/supervisor/conf.d/kodoredisexporter.conf
+sudo rm -rf /home/qboxserver/kodoredisexporter
+sudo rm -rf /etc/supervisor/conf.d/qboxlcc.conf
+sudo sed -i 's/2325/2324/g' /home/qboxserver/mgoroll_2/_package/qboxmgoroll_2.conf 
+sudo rm -rf /etc/supervisor/conf.d/monptfdstg.conf
+sudo rm -rf /etc/supervisor/conf.d/monptfdtransfer.conf
+sudo supervisorctl update && sudo supervisorctl restart all
+SCRIPT
+$s4 = <<-SCRIPT
+sudo sed -i 's/10.0.0.101:9030/10.0.0.104:9030/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/pfdstg-node1/pfdstg-node4/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/10.0.0.101:9035/10.0.0.104:9035/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/"group_id": 2/"group_id": 1/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/"group_idx": 1/"group_idx": 2/g' /home/qboxserver/pfdstg/_package/qboxpfdstg.conf
+sudo sed -i 's/10.0.0.101:6010/10.0.0.104:6010/g' /home/qboxserver/ptfdstg/_package/qboxptfdstg.conf
+sudo sed -i 's/"dgid": 201/"dgid": 101/g' /home/qboxserver/ptfdstg/_package/qboxptfdstg.conf
+sudo rm -rf /etc/supervisor/conf.d/kodoredisexporter.conf
+sudo rm -rf /home/qboxserver/kodoredisexporter
+sudo rm -rf /etc/supervisor/conf.d/prometheus.conf
+sudo rm -rf /etc/supervisor/conf.d/qboxlcc.conf
+sudo rm -rf /etc/supervisor/conf.d/mgoroll_2.conf
+sudo rm -rf /etc/supervisor/conf.d/a*.conf
+sudo rm -rf /etc/supervisor/conf.d/b*.conf
+sudo rm -rf /etc/supervisor/conf.d/conf*.conf
+sudo rm -rf /etc/supervisor/conf.d/coun*.conf
+sudo rm -rf /etc/supervisor/conf.d/iorefresh.conf
+sudo rm -rf /etc/supervisor/conf.d/kodo*.conf
+sudo rm -rf /etc/supervisor/conf.d/nsq*.conf
+sudo rm -rf /etc/supervisor/conf.d/pfdc*.conf
+sudo rm -rf /etc/supervisor/conf.d/pfdd*.conf
+sudo rm -rf /etc/supervisor/conf.d/pfdt*.conf
+sudo rm -rf /etc/supervisor/conf.d/ptfdm.conf
+sudo rm -rf /etc/supervisor/conf.d/qiniu*.conf
+sudo rm -rf /etc/supervisor/conf.d/re*.conf
+sudo rm -rf /etc/supervisor/conf.d/ro*.conf
+sudo rm -rf /etc/supervisor/conf.d/mc.conf
+sudo rm -rf /etc/supervisor/conf.d/mem*.conf
+sudo rm -rf /home/qboxserver/mem*
+sudo rm -rf /home/qboxserver/re*
+sudo rm -rf /home/qboxserver/nsq*
+sudo rm -rf /home/qboxserver/kodo*
+sudo rm -rf /etc/supervisor/conf.d/mon*.conf
+sudo rm -rf /etc/supervisor/conf.d/consul_server.conf
+sudo cat << EOF > /etc/supervisor/conf.d/consul_agent.conf
+[program:consul_agent]
+directory=/home/qboxserver/consul/
+command=/home/qboxserver/consul/consul agent -config-file /home/qboxserver/consul/consul_agent.json
+process_name=%(program_name)s
+numprocs=1
+autostart=true
+startretries=3
+autorestart=true
+user=qboxserver
+redirect_stderr=false
+pidfile=/home/qboxserver/consul/consul.pid
+stdout_logfile=/home/qboxserver/consul/consul.log
+stdout_logfile_maxbytes=100MB
+stdout_logfile_backups=5
+stderr_logfile=/home/qboxserver/consul/error.log
+stderr_logfile_maxbytes=100MB
+stderr_logfile_backups=5
+EOF
+sudo cat << EOF > /home/qboxserver/consul/consul_agent.json
+{
+    "server": false,
+    "datacenter": "test-z0",
+    "data_dir": "/home/qboxserver/consul/data/",
+    "domain": "qiniu",
+    "log_level": "INFO",
+    "node_name": "agent-z0-node4-10.0.0.104",
+    "client_addr": "0.0.0.0",
+    "bind_addr": "10.0.0.104",
+    "start_join": [
+        "10.0.0.101",
+        "10.0.0.102",
+        "10.0.0.103",
+        "10.0.0.104"
+    ],
+    "rejoin_after_leave": true,
+    "ui": false,
+    "ports": {
+        "server": 8300,
+        "serf_lan": 8301,
+        "serf_wan": 8302,
+        "http": 8500,
+        "dns": 8600,
+        "https": -1
+    },
+    "dns_config": {
+        "allow_stale": true,
+        "enable_truncate": true,
+        "only_passing": true,
+        "max_stale": "1h"
+    }
+}
+EOF
+sudo supervisorctl update && sudo supervisorctl restart all
+SCRIPT
+Vagrant.configure(2) do |config|
+#指定box
+    config.vm.box = "qiniu"
+    node_servers = { :node4 => ['10.0.0.104',$s4],
+                     :node3 => ['10.0.0.103',$s3],
+                     :node2 => ['10.0.0.102',$s2],
+                     :node1 => ['10.0.0.101',$s1]
+                }
+    node_servers.each do |node_name,node_ip|
+        config.vm.define node_name do |node_config|
+            node_config.vm.host_name = node_name.to_s
+            node_config.vm.network :private_network,ip: node_ip[0]
+            node_config.ssh.private_key_path = './private_key'
+            node_config.vm.provision "shell", inline: node_ip[1]
+        config.vm.boot_timeout = 300
+            node_config.vm.provider "virtualbox" do |v|
+                v.memory = 8192
+                v.cpus = 8
+            end
+        end
+    end
+end
