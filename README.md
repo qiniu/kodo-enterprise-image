@@ -6,6 +6,9 @@ This Doc teaches you how to quickly build Kodo Enterprise Storage Cluster
 * VBox 5.2.24
 * Vagrant 2.2.3
 ## 推荐配置 
+|CPU|内存|OS|
+|------|------|------|
+|8核|16G以上|Linux最佳|
 
 ## Quick Start
 Step 1. Install [Vbox](https://www.virtualbox.org) and [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
