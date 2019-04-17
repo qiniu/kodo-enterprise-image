@@ -1,4 +1,4 @@
-# Image-Qiniu
+# Kodo Enterprise Image 
 
 ## Introduction
 This Doc teaches you how to quickly build Kodo Enterprise Storage Cluster
