@@ -48,8 +48,6 @@ RUN yum install -y \
     -o /usr/local/openresty/nginx/ssl/nginx.key \
     && curl -SL http://image.pocdemo.qiniu.io/openresty \
     -o /etc/init.d/openresty \
-    && curl -SL http://image.pocdemo.qiniu.io/chrony.conf \
-    -o /etc/chrony.conf \
     && curl -SL http://image.pocdemo.qiniu.io/start.sh \
     -o /root/start.sh \
     && chmod +x /etc/init.d/openresty \
