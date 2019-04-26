@@ -15,7 +15,7 @@ then
 elif [ "$(hostname)" == "node4" ]
 then
   tar -xf /qiniu/node4.tgz -C /home/qboxserver && chown -R qboxserver. /home/qboxserver && tar -xf /qiniu/sup04.tgz -C /etc/supervisor/conf.d/ &&  rm -rf /etc/chrony.conf && mv /qiniu/chrony.conf /etc/ && /usr/sbin/chronyd -f /etc/chrony.conf && rm -rf /qiniu && supervisord 
-  sleep 30
+  sleep 120
   /home/qboxserver/consul/consul kv import @/data/lice.json
   /bin/bash
 fi
