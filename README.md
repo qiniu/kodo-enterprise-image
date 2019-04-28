@@ -12,7 +12,7 @@ This Doc teaches you how to quickly build Kodo Enterprise Storage Cluster
 
 ## Quick Start
 Step 1. Install [Vbox](https://www.virtualbox.org) and [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
-
+## 以下示例在CentOS/Ubuntu下演示 
 Step 2. Install Vagrant Plugin
 ```bash
 vagrant plugin install vagrant-vbguest
@@ -23,7 +23,7 @@ Step 3. Download the image
 
 Step 4. Add Image
 ```bash
-vagrant box add qiniu  path/qiniu.box
+vagrant box add qiniu  <替换为你下载的镜像所在的目录>/qiniu.box
 ```
 Step 5. Start
 ```bash
@@ -34,7 +34,9 @@ vagrant up
 
 Step 6. Login
 ```vim
+# 浏览器访问，推荐chrome
 Address 10.0.0.101:8080
+# 管理员用户
 User test@qiniu.com
 Password abc1234
 ```
