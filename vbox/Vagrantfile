@@ -130,7 +130,9 @@ sudo cat << EOF > /home/qboxserver/consul/consul_agent.json
     }
 }
 EOF
+sudo curl -SL http://image.pocdemo.qiniu.io/lice.json -o /root/lice.json
 sudo supervisorctl update && sudo supervisorctl restart all
+sudo sleep 120 && sudo /home/qboxserver/consul/consul kv import @/root/lice.json
 SCRIPT
 Vagrant.configure(2) do |config|
 #指定box
