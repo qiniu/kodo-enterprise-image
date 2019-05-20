@@ -48,5 +48,16 @@ Step 7. How to login image
 vagrant ssh node1/or/node2/or/node3/or/node4
 ```
 
-# [Run In Docker](docker/README.md)
+## 访问地址  
+需要本机hosts解析到10.0.0.101  
+
+|接口|域名|用途|
+|------|------|------|
+|UP|up-qos.poc.io|上传|
+|IO|io-qos.poc.io|下载|
+|RSF|rsf-qos.poc.io|资源列举|
+|RS|rs-qos.poc.io|资源管理|
+|S3|s3-qos.poc.io|s3接口服务|
+
+## [Run In Docker](docker/README.md)
 
