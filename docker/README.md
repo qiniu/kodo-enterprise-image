@@ -3,8 +3,10 @@
 ## Dependencies
 * docker 1.13
 * OS CentOS 7.5 or later
-## 以下示例在CentOS/Ubuntu下演示
-## Quick Start
+## Quick Start  
+
+以下示例在CentOS/Ubuntu下演示  
+
 Step 1. Install [Docker](https://docs.docker.com/install/)  
 
 Step 2. Create Network 
@@ -28,9 +30,9 @@ docker run --privileged -i -t  --name node4 --hostname node4 --net=test --ip 10.
 
 Setup 5. login
 ```vim
-# 浏览器登陆，推荐chrome
+## 浏览器登陆，推荐chrome
 YourIP:8080
-# 管理员账户
+## 管理员账户
 User test@qiniu.com
 Password abc1234
 ```

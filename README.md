@@ -15,7 +15,6 @@ This Doc teaches you how to quickly build Kodo Enterprise Storage Cluster
 以下示例在CentOS/Ubuntu下演示 
 
 Step 1. Install [Vbox](https://www.virtualbox.org) and [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
-## 以下示例在CentOS/Ubuntu下演示 
 Step 2. Install Vagrant Plugin
 ```bash
 vagrant plugin install vagrant-vbguest
