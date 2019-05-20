@@ -10,7 +10,10 @@ This Doc teaches you how to quickly build Kodo Enterprise Storage Cluster
 |------|------|------|------|
 |8核|16G以上|Linux最佳|100G以上|
 
-## Quick Start
+## Quick Start  
+
+以下示例在CentOS/Ubuntu下演示 
+
 Step 1. Install [Vbox](https://www.virtualbox.org) and [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
 ## 以下示例在CentOS/Ubuntu下演示 
 Step 2. Install Vagrant Plugin
@@ -34,9 +37,9 @@ vagrant up
 
 Step 6. Login
 ```vim
-# 浏览器访问，推荐chrome
+## 浏览器访问，推荐chrome
 Address 10.0.0.101:8080
-# 管理员用户
+## 管理员用户
 User test@qiniu.com
 Password abc1234
 ```
