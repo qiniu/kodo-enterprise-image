@@ -12,7 +12,7 @@ Step 2. Create Network
 docker network create --driver bridge --subnet 10.0.0.1/24 test
 ```
 
-Step 3. Load [Image](http://image.pocdemo.qiniu.io/kodo.tgz?attname=)  
+Step 3. Load [Image](http://prswjl9ey.bkt.clouddn.com/kodo.tgz)  
 ```bash
 tar -xf kodo.tgz
 docker load -i kodo.tar

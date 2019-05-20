@@ -19,7 +19,7 @@ vagrant plugin install vagrant-vbguest
 ```
 
 Step 3. Download the image  
-[Image](http://image.pocdemo.qiniu.io/qiniu.box?attname=)
+[Image](http://prswjl9ey.bkt.clouddn.com/qiniu.box)
 
 Step 4. Add Image
 ```bash
