@@ -8,7 +8,7 @@ This Doc teaches you how to quickly build Kodo Enterprise Storage Cluster
 ## 推荐配置 
 |CPU|内存|OS|磁盘|
 |------|------|------|------|
-|8核|16G以上|Linux最佳|100G以上|
+|8核|32G以上|Linux最佳|100G以上|
 
 ## Quick Start  
 

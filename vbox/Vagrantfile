@@ -150,8 +150,8 @@ Vagrant.configure(2) do |config|
             node_config.vm.provision "shell", inline: node_ip[1]
         config.vm.boot_timeout = 300
             node_config.vm.provider "virtualbox" do |v|
-                v.memory = 8192
-                v.cpus = 8
+                v.memory = 4096
+                v.cpus = 4
             end
         end
     end
