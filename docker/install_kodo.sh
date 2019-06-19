@@ -26,6 +26,6 @@ Install_kodo(){
  if [ $i == 5 ];then
 	docker exec -it $node4 /home/qboxserver/consul/consul kv import @/data/lice.json
  else
-	sleep 20 && docker exec -it $node4 /home/qboxserver/consul/consul kv import @/data/lice.json
+	sleep 240 && docker exec -it $node4 /home/qboxserver/consul/consul kv import @/data/lice.json
  fi
 }
