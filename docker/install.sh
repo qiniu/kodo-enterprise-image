@@ -52,7 +52,7 @@ fi
 
 [ ! -d "${qiniu_dir}" ] && mkdir -p ${qiniu_dir}
 
-bash ./install_kodo.sh
+source ./install_kodo.sh
 
 Install_kodo  | tee -a ${qiniu_dir}/install.log
 echo -e "请在host解析下面域名"
