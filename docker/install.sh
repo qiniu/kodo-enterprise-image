@@ -55,5 +55,6 @@ fi
 source ./install_kodo.sh
 
 Install_kodo  | tee -a ${qiniu_dir}/install.log
+
 echo -e "请在host解析下面域名"
 echo -e "登陆地址\thttp://$ip:8080\n用户名\ttest@qiniu.com\n密码\tabc1234\necloud.poc.io\t$ip\nup-qos.poc.io\t$ip\nio-qos.poc.io\t$ip\nrsf-qos.poc.io\t$ip\nrspub-qos.poc.io\t$ip" |bash table.sh
