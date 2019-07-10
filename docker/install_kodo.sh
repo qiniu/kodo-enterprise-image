@@ -1,5 +1,10 @@
 #!/bin/bash
-
+# Author:  <haohaiwei@qiniu.com>
+#
+# Notes: 七牛私有云体验版 for CentOS/RedHat 7+ and Ubuntu 16+
+# Project home page
+#       https://www.qiniu.com/products/private-cloud-kodo
+#       https://github.com/qiniu/kodo-enterprise-image
 
 Install_kodo(){
  curl -SL http://prswjl9ey.bkt.clouddn.com/kodo.tgz |tar -xzC ${qiniu_dir}

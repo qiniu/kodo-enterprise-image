@@ -1,9 +1,9 @@
 #!/bin/bash
-
 # Author:  <haohaiwei@qiniu.com>
 #
 # Notes: 七牛私有云体验版 for CentOS/RedHat 7+ and Ubuntu 16+
-#
+# Project home page
+#       https://www.qiniu.com/products/private-cloud-kodo
 #       https://github.com/qiniu/kodo-enterprise-image
 
 echo=echo
@@ -38,7 +38,7 @@ printf "
 mem_total=`free | awk '/Mem/ {print $2}'`
 mem_used=`free | awk '/Mem/ {print $3}'`
 mem_free=$(($mem_total-$mem_used))
-ip=$(ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"|head -n 1)
+ip=$(ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"|tail -n 1)
 [ $mem_free -le 7000000 ] && { echo "${CFAILURE}Error: There is not enough Memory${CEND}"; exit 1; }
 
 read -e -p "Do you want to install KODO? [y/n]: " kodo_flag
@@ -56,5 +56,5 @@ source ./install_kodo.sh
 
 Install_kodo  | tee -a ${qiniu_dir}/install.log
 
-echo -e "请在host解析下面域名"
+echo -e "${CMSG}请在host解析下面域名${CEND}"
 echo -e "登陆地址\thttp://$ip:8080\n用户名\ttest@qiniu.com\n密码\tabc1234\necloud.poc.io\t$ip\nup-qos.poc.io\t$ip\nio-qos.poc.io\t$ip\nrsf-qos.poc.io\t$ip\nrspub-qos.poc.io\t$ip" |bash table.sh

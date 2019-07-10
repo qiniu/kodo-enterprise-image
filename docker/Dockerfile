@@ -8,17 +8,12 @@ RUN yum install -y \
     tree \
     smartmontools \ 
     libcurl \
-    net-tools \
-    python-pymongo \
-    python-pip \
-    python-urllib3 \
-    python-requests \
-    htop  \
     supervisor \
     memcached \
     chrony \
+    python-urllib3 \
+    python-requests \
     ntpdate \
-    redhat-lsb \
     yum-utils \
     && yum-config-manager --add-repo \
     https://openresty.org/package/centos/openresty.repo \
@@ -38,27 +33,19 @@ RUN yum install -y \
     /disk1 \
     /data \
     /qiniu \
-    && curl -SL  http://image.pocdemo.qiniu.io/conf.tgz \
-    | tar -xzC /etc/ \
-    && curl -SL http://image.pocdemo.qiniu.io/nginx.conf \
-    -o /usr/local/openresty/nginx/conf/nginx.conf \
-    && curl -SL http://image.pocdemo.qiniu.io/nginx.crt \
-    -o /usr/local/openresty/nginx/ssl/nginx.crt \
-    && curl -SL http://image.pocdemo.qiniu.io/nginx.key \
-    -o /usr/local/openresty/nginx/ssl/nginx.key \
-    && curl -SL http://image.pocdemo.qiniu.io/openresty \
-    -o /etc/init.d/openresty \
-    && curl -SL http://image.pocdemo.qiniu.io/start.sh \
-    -o /root/start.sh \
-    && chmod +x /etc/init.d/openresty \
     && chown -R qboxserver. \
     /rs1 \
     /data \
     /disk1 \
-    && chmod +x /root/start.sh \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai \
     /etc/localtime 
 ADD qiniu.tgz /qiniu/
-COPY chrony.conf /qiniu/
-EXPOSE 8080
+ADD conf.tgz /etc/
+COPY nginx.conf /usr/local/openresty/nginx/conf/
+COPY nginx.key /usr/local/openresty/nginx/ssl/
+COPY nginx.crt /usr/local/openresty/nginx/ssl/
+COPY start.sh /root
+COPY openresty /etc/init.d/
+RUN  chmod +x /etc/init.d/openresty /root/start.sh
+COPY lice.json /data
 CMD ["/root/start.sh"]
