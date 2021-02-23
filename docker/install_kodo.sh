@@ -7,7 +7,7 @@
 #       https://github.com/qiniu/kodo-enterprise-image
 
 Install_kodo(){
- curl -SL http://prswjl9ey.bkt.clouddn.com/kodo.tgz |tar -xzC ${qiniu_dir}
+ curl -SL http://kodoe-release.qiniu.com/kodo.tgz |tar -xzC ${qiniu_dir}
  [ ! -e "${qiniu_dir}/kodo.tar" ] && { echo "${CWARNING}Download image failed! ${CEND}";  exit 1; }
  if [ -e "${qiniu_dir}/kodo.tar" ]; then
 	docker load -i ${qiniu_dir}/kodo.tar
